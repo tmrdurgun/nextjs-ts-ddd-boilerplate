@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./",
+    "paths": {
+      "@styles/*": ["styles/*"],
+      "@layout/*": ["components/layout/*"],
+      "@page/*": ["components/page/*"],
+      "@shared/*": ["components/shared/*"],
+      "@domain/*": ["components/domain/*"],
+      "@uikit/*": ["components/uikit/*"],
+      "@api": ["api/index.ts"],
+      "@actionTypes": ["redux/action/types/index.ts"],
+      "@actions": ["redux/action/actions/index.ts"],
+      "@store": ["redux/index.ts"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
