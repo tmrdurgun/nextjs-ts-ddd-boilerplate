@@ -17,4 +17,4 @@ export type { UserUpdateViewModel } from './models/UserUpdateViewModel';
 export type { UserViewModel } from './models/UserViewModel';
 
 export { AuthenticationService } from './services/AuthenticationService';
-export { UsersService } from './services/UsersService';
+export { UserService } from './services/UserService';

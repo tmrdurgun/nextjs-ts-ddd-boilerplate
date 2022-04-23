@@ -2,7 +2,11 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,18 +21,44 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@styles/*": ["styles/*"],
-      "@layout/*": ["components/layout/*"],
-      "@page/*": ["components/page/*"],
-      "@shared/*": ["components/shared/*"],
-      "@domain/*": ["components/domain/*"],
-      "@uikit/*": ["components/uikit/*"],
-      "@api": ["api/index.ts"],
-      "@actionTypes": ["redux/action/types/index.ts"],
-      "@actions": ["redux/action/actions/index.ts"],
-      "@store": ["redux/index.ts"]
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@layout/*": [
+        "components/layout/*"
+      ],
+      "@page/*": [
+        "components/page/*"
+      ],
+      "@shared/*": [
+        "components/shared/*"
+      ],
+      "@domain/*": [
+        "components/domain/*"
+      ],
+      "@uikit/*": [
+        "components/uikit/*"
+      ],
+      "@api": [
+        "api/index.ts"
+      ],
+      "@actionTypes": [
+        "redux/action/types/index.ts"
+      ],
+      "@actions": [
+        "redux/actions/index.ts"
+      ],
+      "@store": [
+        "redux/index.ts"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

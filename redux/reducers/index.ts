@@ -1,5 +1,16 @@
-import flight from "./flight";
+import userReducer from './user';
 
-export default {
-  flight,
+/* type UserReducer = {
+  name: string,
+  surname: string
 };
+
+export interface IAppState {
+  user?: UserReducer;
+} */
+
+const rootReducer: object = {
+  user: userReducer,
+};
+
+export default rootReducer;

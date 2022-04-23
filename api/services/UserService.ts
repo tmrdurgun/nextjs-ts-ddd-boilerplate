@@ -2,7 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { EmptyResponseViewModel } from '../models/EmptyResponseViewModel';
-import type { SalesMasterViewModel } from '../models/SalesMasterViewModel';
 import type { UserUpdateViewModel } from '../models/UserUpdateViewModel';
 import type { UserViewModel } from '../models/UserViewModel';
 
@@ -10,7 +9,7 @@ import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class UsersService {
+export class UserService {
 
     /**
      * Profile
@@ -66,39 +65,4 @@ body?: UserUpdateViewModel,
             },
         });
     }
-
-    /**
-     * Reservations
-     * Gets all reservations by token
-     * @param authorization Authorization
-     * @param page 
-     * @param size 
-     * @returns SalesMasterViewModel Success
-     * @throws ApiError
-     */
-    public static listReservations(
-authorization: string,
-page?: number,
-size?: number,
-): CancelablePromise<Array<SalesMasterViewModel>> {
-        return __request(OpenAPI, {
-            method: 'GET',
-            url: '/users/reservations',
-            headers: {
-                'authorization': authorization,
-            },
-            query: {
-                'page': page,
-                'size': size,
-            },
-            errors: {
-                400: `Bad Request`,
-                401: `Unauthorized`,
-                403: `Forbidden`,
-                404: `Not Found`,
-                500: `Server Error`,
-            },
-        });
-    }
-
 }
