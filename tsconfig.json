@@ -50,6 +50,9 @@
       ],
       "@store": [
         "redux/index.ts"
+      ],
+      "@theme": [
+        "utils/theme/index.tsx"
       ]
     }
   },
