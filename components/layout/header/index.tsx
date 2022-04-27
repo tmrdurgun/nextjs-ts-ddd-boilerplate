@@ -1,12 +1,16 @@
+import type { FC } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTranslation } from 'next-i18next';
+import { withTranslation } from 'next-i18next';
 
-const Header = () => {
+type T = {
+  t: Function
+};
+
+const Header: FC<T> = ({t}) => {
   const router = useRouter();
-  const { t, i18n } = useTranslation('common');
 
-  const handleLocaleChange = (event) => {
+  const handleLocaleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
     router.push(router.route, router.asPath, {
@@ -16,11 +20,15 @@ const Header = () => {
   
   return (
     <header>
-      HEADER!
+      HEADER! {t('Hoşgeldiniz')}
 
       <nav>
         <Link href="/">
-          <a className={router.asPath === "/" ? "active" : ""}>{t('Hoşgeldiniz')}</a>
+          <a className={router.asPath === "/" ? "active" : ""}> {t('Giriş Yap', {ns: 'header'})}</a>
+        </Link>
+
+        <Link href="/">
+          <a className={router.asPath === "/" ? "active" : ""}> {t('Kayıt Ol', {ns: 'header'})}</a>
         </Link>
       </nav>
 
@@ -31,4 +39,5 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+
+export default withTranslation(['common', 'header'])(Header);
