@@ -13,6 +13,8 @@ const Header: FC<T> = ({t}) => {
   const handleLocaleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
+    localStorage.setItem('i18nextLng', value); // TODO: this needs to be managed via redux
+
     router.push(router.route, router.asPath, {
       locale: value,
     });
